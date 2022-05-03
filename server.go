@@ -41,21 +41,3 @@ func main() {
 	log.Printf("Serving %s on HTTP port: %s\n", *directory, *port)
 	log.Fatal(http.ListenAndServe(":"+*port, nil))
 }
-
-// import (
-// 	"html/template"
-// 	"net/http"
-// )
-//
-// func main() {
-// 	http.HandleFunc("/", func(w http.ResponseWriter, _ *http.Request) {
-// 		t, err := template.ParseFiles("frontend/build/index.html")
-// 		if err != nil {
-// 			panic(err)
-// 		}
-// 		w.Header().Set("Access-Control-Allow-Origin", "bitbucket.org")
-// 		t.Execute(w, nil)
-// 	})
-// 	println("Listening on port: 8080")
-// 	http.ListenAndServe(":8080", nil)
-// }
